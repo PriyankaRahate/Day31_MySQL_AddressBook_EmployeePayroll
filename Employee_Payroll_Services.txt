@@ -1,0 +1,85 @@
+
+********************************************
+UC1--Ability to create a payroll service database
+********************************************
+
+mysql> show databases;
++----------------------+
+| Database             |
++----------------------+
+| addressbook          |
+| addressbook1         |
+| addressbookservice   |
+| addressbookservices  |
+| addressbookservices1 |
+| information_schema   |
+| mysql                |
+| performance_schema   |
+| sakila               |
+| sys                  |
+| world                |
++----------------------+
+11 rows in set (0.17 sec)
+
+mysql> CREATE DATABASE testdb;
+Query OK, 1 row affected (0.56 sec)
+
+mysql> DROP DATABASE testdb;
+Query OK, 0 rows affected (2.44 sec)
+
+mysql> CREATE DATABASE Employee_Payroll_Service;
+Query OK, 1 row affected (0.15 sec)
+
+mysql> USE Employee_Payroll_Service;
+Database changed
+mysql> show databases;
++--------------------------+
+| Database                 |
++--------------------------+
+| addressbook              |
+| addressbook1             |
+| addressbookservice       |
+| addressbookservices      |
+| addressbookservices1     |
+| employee_payroll_service |
+| information_schema       |
+| mysql                    |
+| performance_schema       |
+| sakila                   |
+| sys                      |
+| world                    |
++--------------------------+
+12 rows in set (0.10 sec)
+
+mysql>  SELECT DATABASE();
++--------------------------+
+| DATABASE()               |
++--------------------------+
+| employee_payroll_service |
++--------------------------+
+1 row in set (0.00 sec)
+
+***********************************************************************************************************
+UC2--Ability to create a employee payroll table in the payroll service database to manage employee payrolls
+***********************************************************************************************************
+
+mysql> CREATE TABLE employee_payroll
+    -> (
+    ->  id INT unsigned NOT NULL AUTO_INCREMENT,
+    -> name VARCHAR(150) NOT NULL,
+    -> salary    Double NOT NULL,
+    ->  start  DATE NOT NULL,
+    -> PRIMARY KEY (id)
+    ->  );
+Query OK, 0 rows affected (3.55 sec)
+
+mysql> DESCRIBE employee_payroll;
++--------+--------------+------+-----+---------+----------------+
+| Field  | Type         | Null | Key | Default | Extra          |
++--------+--------------+------+-----+---------+----------------+
+| id     | int unsigned | NO   | PRI | NULL    | auto_increment |
+| name   | varchar(150) | NO   |     | NULL    |                |
+| salary | double       | NO   |     | NULL    |                |
+| start  | date         | NO   |     | NULL    |                |
++--------+--------------+------+-----+---------+----------------+
+4 rows in set (0.23 sec)
