@@ -1,0 +1,60 @@
+
+********************************************
+UC1--Ability to create a payroll service database
+********************************************
+
+mysql> show databases;
++----------------------+
+| Database             |
++----------------------+
+| addressbook          |
+| addressbook1         |
+| addressbookservice   |
+| addressbookservices  |
+| addressbookservices1 |
+| information_schema   |
+| mysql                |
+| performance_schema   |
+| sakila               |
+| sys                  |
+| world                |
++----------------------+
+11 rows in set (0.17 sec)
+
+mysql> CREATE DATABASE testdb;
+Query OK, 1 row affected (0.56 sec)
+
+mysql> DROP DATABASE testdb;
+Query OK, 0 rows affected (2.44 sec)
+
+mysql> CREATE DATABASE Employee_Payroll_Service;
+Query OK, 1 row affected (0.15 sec)
+
+mysql> USE Employee_Payroll_Service;
+Database changed
+mysql> show databases;
++--------------------------+
+| Database                 |
++--------------------------+
+| addressbook              |
+| addressbook1             |
+| addressbookservice       |
+| addressbookservices      |
+| addressbookservices1     |
+| employee_payroll_service |
+| information_schema       |
+| mysql                    |
+| performance_schema       |
+| sakila                   |
+| sys                      |
+| world                    |
++--------------------------+
+12 rows in set (0.10 sec)
+
+mysql>  SELECT DATABASE();
++--------------------------+
+| DATABASE()               |
++--------------------------+
+| employee_payroll_service |
++--------------------------+
+1 row in set (0.00 sec)
